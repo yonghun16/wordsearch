@@ -1,0 +1,26 @@
+.header-container {
+  display: flex;
+  justify-content: center
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 686px;
+  height: 100px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #008080;
+  color: #008080;
+}
+
+.logo__word {
+  font-size: 40px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.logo__search {
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+

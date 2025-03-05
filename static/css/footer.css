@@ -1,0 +1,29 @@
+footer {
+  width: 100%;
+  height: 120px;
+  background-color: #555555;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer .content {
+  display: flex;
+  justify-content: center;
+  span {
+    padding: 10px;
+    color : #F6F6F6;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+  }
+
+}
+.copyright {
+  color : #F6F6F6;
+  padding: 10px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;  
+  text-align: center;
+}
+
+

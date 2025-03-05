@@ -1,0 +1,44 @@
+.theme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.theme {
+  margin-top: 40px;
+  font-size: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #555;
+  width: 686px;
+}
+
+.gird-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+.search-grid {
+  border: 1px solid #DEDEDD;
+
+}
+.grid-row,
+.grid-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-row {
+  gap: 0px;
+}
+
+.grid-column {
+  background-color: #FEFFFC;
+  border: 1px solid #DEDEDD;
+  width: 55px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
