@@ -8,7 +8,7 @@
   font-size: 30px;
   font-family: 'Noto Sans KR', sans-serif;
   color: #555;
-  width: 686px;
+  width: 830px;
 }
 
 .gird-container {
@@ -42,3 +42,15 @@
   font-weight: bold;
 }
 
+.words{
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  width: 100px;
+  height: 600px;
+  padding: 20px;
+  line-height: 1.5em;
+  color: #484844;
+  font-size: 18px;
+  font-family: 'Noto Sans KR', sans-serif;
+}

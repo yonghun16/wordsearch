@@ -1,12 +1,7 @@
 import random
 
-# word_search_grid의 최대 행과 열
-GRID_MAX_ROW = 12
-GRID_MAX_COL = 12
-grid_size = (GRID_MAX_ROW, GRID_MAX_COL)
-
-# create word_search_grid
-def create_word_search_grid(grid_size, words):
+# create word_search_grid and return
+def create_word_search_grid(words, grid_size):
     grid_rows, grid_cols = grid_size
 
     # word_search_grid 생성
@@ -14,8 +9,12 @@ def create_word_search_grid(grid_size, words):
 
     # 단어 배치
     input_word(word_search_grid, grid_size, words)
+
+    return word_search_grid
     
-    # word_search_grid 출력
+# word_search_grid 출력
+def print_word_search_grid(word_search_grid, grid_size):
+    grid_rows, grid_cols = grid_size
     for i in range(grid_rows):
         for j in range(grid_cols):
             print(word_search_grid[i][j], end=' ')
@@ -82,7 +81,8 @@ def set_start_point(direction, word, grid_rows, grid_cols):
     return (start_x, start_y)
 
 
-# __main__
-words = ["BMW", "TESLA", "KIA", "BENZ", "HYUNDAI", "FERRARI"]
-
-word_search_grid = create_word_search_grid(grid_size, words)
+if __name__ == "__main__":
+    grid_size = (12, 12)
+    words = ["BMW", "TESLA", "KIA", "BENZ", "HYUNDAI", "FERRARI"]
+    word_search_grid = create_word_search_grid(words, grid_size)
+    print_word_search_grid(word_search_grid, grid_size)
