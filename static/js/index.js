@@ -39,8 +39,8 @@ async function handleCreateWord() {
   const jsonRes = await res.json();
   const rows = 12;
   const cols = 12;
-  let word_search_grid_word = jsonRes[0];
-  const word_search_grid_num = jsonRes[1];
+  console.log(jsonRes)
+  const [word_search_grid_word, word_search_grid_num] = jsonRes;
 
   console.log(word_search_grid_word) 
   console.log(word_search_grid_num) 
