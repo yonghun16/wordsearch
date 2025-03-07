@@ -4,7 +4,7 @@ function fillBlinkGridWord(word_search_grid_word, rows, cols) {
   for (let i = 0; i < rows; i++) {
     const rowBlank = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
-      const columnBlank = rowBlank.querySelector(`[data-index="${i}${j}"]`);
+      const columnBlank = rowBlank.querySelector(`[data-index-row="${i}"][data-index-col="${j}"]`);
       if (word_search_grid_word[i][j] === "_") {
         word_search_grid_word[i][j] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
         columnBlank.style.backgroundColor = "#FEFFFC";
@@ -19,7 +19,7 @@ function fillAnswerGridColor(word_search_grid_num, rows, cols) {
   for (let i = 0; i < rows; i++) {
     const rowAnswer = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
-      const columnAnswer = rowAnswer.querySelector(`[data-index="${i}${j}"]`);
+      const columnAnswer = rowAnswer.querySelector(`[data-index-row="${i}"][data-index-col="${j}"]`);
       if (word_search_grid_num[i][j] !== 0) {
         columnAnswer.style.backgroundColor = `${colorArray[word_search_grid_num[i][j] - 1]}`;
       }
@@ -41,9 +41,11 @@ export async function handleCreateWord(rows, cols) {
   for (let i = 0; i < rows; i++) {
     const row = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
-      const column = row.querySelector(`[data-index="${i}${j}"]`);
+      const column = row.querySelector(`[data-index-row="${i}"][data-index-col="${j}"]`);
       column.innerHTML = word_search_grid_word[i][j];
     }
   }
+  const word_search_grid = [word_search_grid_word, word_search_grid_num];
+  return word_search_grid;
 }
 

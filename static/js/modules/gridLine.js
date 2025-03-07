@@ -10,8 +10,9 @@ export function createGridLine(rows, columns) {
       for (let j = 0; j < columns; j++) {
           // 열(column) 생성
           const column = document.createElement("div");
-          column.classList.add("grid-column"); // 클래스 추가
-          column.setAttribute("data-index", `${i}${j}`); // data-index 설정
+          column.classList.add("grid-column");
+          column.setAttribute("data-index-row", `${i}`);
+          column.setAttribute("data-index-col", `${j}`);
           row.appendChild(column); // 행에 열 추가
       }
 
