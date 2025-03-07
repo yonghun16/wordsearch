@@ -11,10 +11,6 @@ function fillBlinkGrid(jsonRes, rows, cols) {
     const rowBlank = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
       const columnBlank = rowBlank.querySelector(`[data-index="${i}${j}"]`);
-      // jsonRes[i]가 문자열이라면, 배열로 변환
-      if (typeof jsonRes[i] === "string") {
-        jsonRes[i] = jsonRes[i].split(""); // 문자열 → 배열
-      }
       if (jsonRes[i][j] === "_") {
         jsonRes[i][j] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
         columnBlank.style.backgroundColor = "#FEFFFC";
@@ -47,7 +43,7 @@ async function handleCreateWord() {
   const cols = 12;
 
   fillBlinkGrid(word_search_grid_word, rows, cols);
-  fillAnswerGrid(word_search_grid_num, rows, cols);
+  //fillAnswerGrid(word_search_grid_num, rows, cols);
 
   for (let i = 0; i < rows; i++) {
     const row = document.querySelector(`.row-${i}`);
