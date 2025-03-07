@@ -6,18 +6,18 @@ const newGame = document.querySelector(".new");
 
 /*--- functions ---*/
 // 빈 격자에 랜덤한 알파벳 채우기
-function fillBlinkGrid(jsonRes, rows, cols) {
-  for (let i = 0; i < rows; i++) {
-    const rowBlank = document.querySelector(`.row-${i}`);
-    for (let j = 0; j < cols; j++) {
-      const columnBlank = rowBlank.querySelector(`[data-index="${i}${j}"]`);
-      if (jsonRes[i][j] === "_") {
-        jsonRes[i][j] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-        columnBlank.style.backgroundColor = "#FEFFFC";
-      }
-    }
-  }
-}
+//function fillBlinkGrid(jsonRes, rows, cols) {
+//  for (let i = 0; i < rows; i++) {
+//    const rowBlank = document.querySelector(`.row-${i}`);
+//    for (let j = 0; j < cols; j++) {
+//      const columnBlank = rowBlank.querySelector(`[data-index="${i}${j}"]`);
+//      if (jsonRes[i][j] === "_") {
+//        jsonRes[i][j] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+//        columnBlank.style.backgroundColor = "#FEFFFC";
+//      }
+//    }
+//  }
+//}
 // 정답 격자에 배경색 채우기
 function fillAnswerGrid(jsonRes, rows, cols) {
   const colorArray = ["#F9A19A", "#79C5BE", "#B39CDB", "#90CAF9", "#9FA8DA", "#BCAAA3", "#FFCB7F", "#AFBEC5", "#E6DF94", "#C6E1A4"];
