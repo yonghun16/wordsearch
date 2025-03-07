@@ -11,8 +11,11 @@ function fillBlinkGrid(jsonRes, rows, cols) {
     const rowBlank = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
       const columnBlank = rowBlank.querySelector(`[data-index="${i}${j}"]`);
+      // jsonRes[i]가 문자열이라면, 배열로 변환
+      if (typeof jsonRes[i] === "string") {
+        jsonRes[i] = jsonRes[i].split(""); // 문자열 → 배열
+      }
       if (jsonRes[i][j] === "_") {
-        console.log(typeof jsonRes[i][j]);
         jsonRes[i][j] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
         columnBlank.style.backgroundColor = "#FEFFFC";
       }
