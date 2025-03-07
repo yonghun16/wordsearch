@@ -45,7 +45,7 @@ async function handleCreateWord() {
   console.log(word_search_grid_word) 
   console.log(word_search_grid_num) 
 
-  //fillBlinkGrid(word_search_grid_word, rows, cols);
+  fillBlinkGrid(word_search_grid_word, rows, cols);
   fillAnswerGrid(word_search_grid_num, rows, cols);
 
   for (let i = 0; i < rows; i++) {
