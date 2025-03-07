@@ -41,7 +41,7 @@ async function handleCreateWord() {
   const rows = 12;
   const cols = 12;
 
-  fillBlinkGrid(jsonRes, rows, cols);
+  //fillBlinkGrid(jsonRes, rows, cols);
   //fillAnswerGrid(word_search_grid_num, rows, cols);
 
   for (let i = 0; i < rows; i++) {
