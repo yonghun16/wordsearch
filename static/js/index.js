@@ -37,11 +37,13 @@ function fillAnswerGrid(jsonRes, rows, cols) {
 async function handleCreateWord() {
   const res = await fetch("/create")
   const jsonRes = await res.json();
+  let word_search_grid_word = jsonRes[0];
+  const word_search_grid_num = jsonRes[1];
   const rows = 12;
   const cols = 12;
 
-  fillBlinkGrid(jsonRes[0], rows, cols);
-  fillAnswerGrid(jsonRes[1], rows, cols);
+  fillBlinkGrid(word_search_grid_word, rows, cols);
+  fillAnswerGrid(word_search_grid_num, rows, cols);
 
   for (let i = 0; i < rows; i++) {
     const row = document.querySelector(`.row-${i}`);
