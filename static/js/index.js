@@ -12,6 +12,7 @@ function fillBlinkGrid(jsonRes, rows, cols) {
     for (let j = 0; j < cols; j++) {
       const columnBlank = rowBlank.querySelector(`[data-index="${i}${j}"]`);
       if (jsonRes[i][j] === "_") {
+        console.log(typeof jsonRes[i][j]);
         jsonRes[i][j] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
         columnBlank.style.backgroundColor = "#FEFFFC";
       }
