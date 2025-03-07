@@ -39,7 +39,7 @@ async function handleCreateWord() {
   const jsonRes = await res.json();
   const rows = 12;
   const cols = 12;
-  let word_search_grid_word = jsonRes[0];
+  let word_search_grid_word = jsonRes[0].map(row => Array.from(row));  
   const word_search_grid_num = jsonRes[1];
 
   fillBlinkGrid(word_search_grid_word, rows, cols);
