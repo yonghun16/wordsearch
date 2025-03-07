@@ -11,6 +11,7 @@ app = FastAPI()
 @app.get("/create")
 def create_word():
     word_search_grid = create_word_search_grid(words, grid_size)
+    print(word_search_grid)
     return word_search_grid
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
