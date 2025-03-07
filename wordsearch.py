@@ -5,13 +5,7 @@ def create_word_search_grid(words, grid_size):
     grid_rows, grid_cols = grid_size
 
     # word_search_grid 생성
-    # word_search_grid[0] : word_search_grid_word (단어 배치) -> 단어 출력용
-    # word_search_grid[1] : word_search_grid_num (단어의 위치에 숫자 배치) -> 단어 검증용
-    word_search_grid = []
-    word_search_grid_word = [['_' for _ in range(grid_cols)] for _ in range(grid_rows)]
-    word_search_grid_num = [[0 for _ in range(grid_cols)] for _ in range(grid_rows)]
-    word_search_grid.append(word_search_grid_word)
-    word_search_grid.append(word_search_grid_num)
+    word_search_grid = [['_' for _ in range(grid_cols)] for _ in range(grid_rows)]
 
     # 단어 배치
     input_word(word_search_grid, grid_size, words)
@@ -23,17 +17,12 @@ def print_word_search_grid(word_search_grid, grid_size):
     grid_rows, grid_cols = grid_size
     for i in range(grid_rows):
         for j in range(grid_cols):
-            print(word_search_grid[0][i][j], end=' ')
-        print()
-    for i in range(grid_rows):
-        for j in range(grid_cols):
-            print(word_search_grid[1][i][j], end=' ')
+            print(word_search_grid[i][j], end=' ')
         print()
 
 # input words 단어 배치
 def input_word(grid, grid_size, words):
     grid_rows, grid_cols = grid_size
-    count = 1;
     for word in words:
         placed = False
         while not placed:
@@ -51,14 +40,12 @@ def input_word(grid, grid_size, words):
 
             check = True
             for i in range(len(word)):
-                if(grid[0][start_y + i*dc][start_x + i*dr] != '_'):
+                if(grid[start_y + i*dc][start_x + i*dr] != '_'):
                     check = False
                     break;
             if check == True:
                 for i in range(len(word)):
-                    grid[0][start_y + i*dc][start_x + i*dr] = word[i]
-                    grid[1][start_y + i*dc][start_x + i*dr] = count
-                count += 1
+                    grid[start_y + i*dc][start_x + i*dr] = word[i]
                 placed = True
 
 # set start point
