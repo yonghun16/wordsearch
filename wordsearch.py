@@ -23,7 +23,6 @@ def print_word_search_grid(word_search_grid, grid_size):
 # input words 단어 배치
 def input_word(grid, grid_size, words):
     grid_rows, grid_cols = grid_size
-    count = 1
     for word in words:
         placed = False
         while not placed:
@@ -48,7 +47,6 @@ def input_word(grid, grid_size, words):
                 for i in range(len(word)):
                     grid[start_y + i*dc][start_x + i*dr] = word[i]
                 placed = True
-                count += 1
 
 # set start point
 def set_start_point(direction, word, grid_rows, grid_cols):

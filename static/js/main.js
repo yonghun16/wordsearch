@@ -4,7 +4,6 @@ const search_grid = document.querySelector('.search-grid');
 const rows = 12;
 const columns = 12;
 
-// 행 (row) 12개 생성
 for (let i = 0; i < rows; i++) {
     // 행(row) 생성
     const row = document.createElement("div");
