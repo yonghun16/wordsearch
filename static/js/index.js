@@ -39,10 +39,10 @@ async function handleCreateWord() {
   const jsonRes = await res.json();
   const rows = 12;
   const cols = 12;
-  let word_search_grid_word = jsonRes[0].map(row => Array.from(row));  
+  let word_search_grid_word = jsonRes[0];
   const word_search_grid_num = jsonRes[1];
 
-  fillBlinkGrid(word_search_grid_word, rows, cols);
+  //fillBlinkGrid(word_search_grid_word, rows, cols);
   fillAnswerGrid(word_search_grid_num, rows, cols);
 
   for (let i = 0; i < rows; i++) {
