@@ -1,6 +1,8 @@
-__pycache__
-bin
-lib
+__pycache__/
+bin/
+lib/
+include/
 .pytest_cache
 .DS_Store
 pyvenv.cfg
+

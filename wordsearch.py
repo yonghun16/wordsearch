@@ -5,13 +5,11 @@ def create_word_search_grid(words, grid_size):
     grid_rows, grid_cols = grid_size
 
     # word_search_grid 생성
-    # word_search_grid[0] : word_search_grid_word (단어 배치) -> 단어 출력용
-    # word_search_grid[1] : word_search_grid_num (단어의 위치에 숫자 배치) -> 단어 검증용
     word_search_grid = []
     word_search_grid_word = [['_' for _ in range(grid_cols)] for _ in range(grid_rows)]
     word_search_grid_num = [[0 for _ in range(grid_cols)] for _ in range(grid_rows)]
-    word_search_grid.append(word_search_grid_word)
-    word_search_grid.append(word_search_grid_num)
+    word_search_grid.append(word_search_grid_word)  # word_search_grid[0] : 단어 배치 -> 단어 출력용
+    word_search_grid.append(word_search_grid_num)   # word_search_grid[1] : 단어의 위치에 숫자 배치 -> 단어 검증용
 
     # 단어 배치
     input_word(word_search_grid, grid_size, words)
