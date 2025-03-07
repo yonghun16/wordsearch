@@ -37,19 +37,18 @@ function fillAnswerGrid(jsonRes, rows, cols) {
 async function handleCreateWord() {
   const res = await fetch("/create")
   const jsonRes = await res.json();
-  let word_search_grid_word = jsonRes;
   //const word_search_grid_num = jsonRes[1];
   const rows = 12;
   const cols = 12;
 
-  fillBlinkGrid(word_search_grid_word, rows, cols);
+  fillBlinkGrid(jsonRes, rows, cols);
   //fillAnswerGrid(word_search_grid_num, rows, cols);
 
   for (let i = 0; i < rows; i++) {
     const row = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
       const column = row.querySelector(`[data-index="${i}${j}"]`);
-      column.innerHTML = word_search_grid_word[i][j];
+      column.innerHTML = jsonRes[i][j];
     }
   }
 }
