@@ -15,7 +15,7 @@ function fillBlinkGridWord(word_search_grid_word, rows, cols) {
 
 // 정답 격자에 배경색 채우기
 function fillAnswerGridColor(word_search_grid_num, rows, cols) {
-  const colorArray = ["#F9A19A", "#79C5BE", "#B39CDB", "#90CAF9", "#9FA8DA", "#BCAAA3", "#FFCB7F", "#AFBEC5", "#E6DF94", "#C6E1A4"];
+  const colorArray = ["#fff5f4", "#d3fffa", "#ede0ff", "#d3eeff", "#e0e6ff", "#f4e4e1", "#fff0db", "#e5f8ff", "#fffce5", "#f0ffe2"];
   for (let i = 0; i < rows; i++) {
     const rowAnswer = document.querySelector(`.row-${i}`);
     for (let j = 0; j < cols; j++) {
