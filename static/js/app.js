@@ -2,7 +2,7 @@ import { createGridLine } from "./modules/gridLine.js";
 import { handleCreateWord } from "./modules/newGame.js";
 import { Stack } from "./modules/stack.js";
 import "./modules/copyright.js";
-import { blopSound, correctSound, applauseSound, alertSound } from "./modules/sounds.js";
+import { blopSound, correctSound, applauseSound } from "./modules/sounds.js";
 
 
 const [rows, cols] = [12, 12];
@@ -73,7 +73,6 @@ function appStart() {
       stackSize = rowsStack.size();
 
       if (stackSize > 1) {
-        alertSound.play();
         for (let i = 0; i < stackSize; i++) {
           const row = rowsStack.pop();
           const col = colsStack.pop();
@@ -123,7 +122,6 @@ function appStart() {
       // 선택한 단어 길이보다 스택크기가 많다면 -> 선택한 단어 외에 엉뚱한 철자를 선택한 경우
       else if (stackSize > 1 && stackSize >= currentCharWordLength) {
         //console.log("inCorrect");
-        alertSound.play();
         for (let i = 0; i < stackSize; i++) {
           const row = rowsStack.pop();
           const col = colsStack.pop();
