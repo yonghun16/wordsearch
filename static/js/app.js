@@ -10,13 +10,14 @@ const words = ["BMW", "TESLA", "KIA", "BENZ", "HYUNDAI", "FERRARI"];
 
 let word_search_grid_num;
 let prevCharNum;
-let success;              // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
+let success;               // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
 let stackSize;
-let rowsStack             // 철자 위치 스택row
-let colsStack             // 철자 위치 스택col
-let colorStack            // 철자 배경색 스택
+let rowsStack;             // 철자 위치 스택row
+let colsStack;             // 철자 위치 스택col
+let colorStack;            // 철자 배경색 스택
+let valueStack;
 
-const colorArray = [      // 철자 배경색
+const colorArray =  [      // 철자 배경색
   "#F9A19A",
   "#79C5BE",
   "#B39CDB",
@@ -48,6 +49,7 @@ function appStart() {
     rowsStack = new Stack();
     colsStack = new Stack();
     colorStack = new Stack();
+    valueStack = new Stack();
   }
 
   // 단어 클릭
@@ -64,8 +66,10 @@ function appStart() {
     rowsStack.push(blockRow);
     colsStack.push(blockCol);
     colorStack.push(columnElement.style.backgroundColor);
+    valueStack.push(currentCharNum)
     //철자 바탕색 칠하기
     columnElement.style.backgroundColor = `${colorArray[currentColor]}`;
+    word_search_grid_num[blockRow][blockCol] = 0;  // grid_num을 0으로 바꾸기 (중복 선택해도 의미 없도록)
 
     // 이전 단어와 '다른 단어의 철자'를 선택한 경우
     if (currentCharNum !== prevCharNum) {
@@ -77,7 +81,9 @@ function appStart() {
           const row = rowsStack.pop();
           const col = colsStack.pop();
           const color = colorStack.pop();
+          const value = valueStack.pop();
           const columnAnswer = document.querySelector(`[data-index-row="${row}"][data-index-col="${col}"]`);
+          word_search_grid_num[row][col] = value;
           columnAnswer.style.backgroundColor = color;
         }
         rowsStack.clear();
@@ -102,11 +108,11 @@ function appStart() {
       if (stackSize >= 3 && stackSize === currentCharWordLength) {
         //console.log("Correct");
         correctSound.play();
-        for (let i = 0; i < stackSize; i++) {
-          const row = rowsStack.pop();
-          const col = colsStack.pop();
-          word_search_grid_num[row][col] = 0;  // 정답 단어의 grid_num을 0으로 바꾸기
-        }
+        //for (let i = 0; i < stackSize; i++) {
+        //  const row = rowsStack.pop();
+        //  const col = colsStack.pop();
+        //  word_search_grid_num[row][col] = 0;  // 정답 단어의 grid_num을 0으로 바꾸기
+        //}
         currentColor += 1;
         rowsStack.clear();
         colsStack.clear();
@@ -126,7 +132,9 @@ function appStart() {
           const row = rowsStack.pop();
           const col = colsStack.pop();
           const color = colorStack.pop();
+          const value = valueStack.pop();
           const columnAnswer = document.querySelector(`[data-index-row="${row}"][data-index-col="${col}"]`);
+          word_search_grid_num[row][col] = value;
           columnAnswer.style.backgroundColor = color;
         }
         rowsStack.clear();
