@@ -17,7 +17,7 @@ let colsStack;             // 철자 위치 스택col
 let colorStack;            // 철자 배경색 스택
 let valueStack;
 
-const colorArray =  [      // 철자 배경색
+const colorArray = [      // 철자 배경색
   "#F9A19A",
   "#79C5BE",
   "#B39CDB",
@@ -35,6 +35,14 @@ let currentColor;          // 현재 클릭한 철자배경색
 /* --- APP start --- */
 function appStart() {
   const newGame = document.querySelector(".new");
+
+  // 스택 비우기
+  function clearStack() {
+    rowsStack.clear();
+    colsStack.clear();
+    colorStack.clear();
+    valueStack.clear();
+  }
 
   // 게임 격자 생성 및 초기화
   async function createWord() {
@@ -86,9 +94,7 @@ function appStart() {
           word_search_grid_num[row][col] = value;
           columnAnswer.style.backgroundColor = color;
         }
-        rowsStack.clear();
-        colsStack.clear();
-        colorStack.clear();
+        clearStack();
       }
     }
     // 이전 단어와 '같은 단어의 철자'를 선택한 경우
@@ -98,14 +104,14 @@ function appStart() {
 
       let currentCharWordLength = 0   // default 0 (오답 단어의 철자를 선택한 경우) 
 
-      // 정답 단어의 철자의 길이 구하기
+      // 정답 단어의 철자 길이 구하기
       if (currentCharNum !== 0) {
         const currentCharWord = words[currentCharNum - 1];
         currentCharWordLength = currentCharWord.length;   // eg. currentCharWordLength <- 3(BMW), 5(TESLA)
       }
 
-      // 스텍크리가 최소 3은 크면서, 단어의 철자의 길이와 같다면,
-      if (stackSize >= 3 && stackSize === currentCharWordLength) {
+      // 스텍크기가 단어의 철자의 길이와 같다면,(최소 3은 넘어야 하고)
+      if (stackSize > 2 && stackSize === currentCharWordLength) {
         //console.log("Correct");
         correctSound.play();
         //for (let i = 0; i < stackSize; i++) {
@@ -114,9 +120,7 @@ function appStart() {
         //  word_search_grid_num[row][col] = 0;  // 정답 단어의 grid_num을 0으로 바꾸기
         //}
         currentColor += 1;
-        rowsStack.clear();
-        colsStack.clear();
-        colorStack.clear();
+        clearStack();
         success += 1;
         if (success === words.length) {
           applauseSound.play();
@@ -124,8 +128,8 @@ function appStart() {
           currentColor = 0;
         }
       }
-      // 스텍크기가 최소 2는 되면서, 단어의 철자의 길이 보다 크다면
-      // 선택한 단어 길이보다 스택크기가 많다면 -> 선택한 단어 외에 엉뚱한 철자를 선택한 경우
+
+      // 선택한 단어 길이보다 스택크기가 많다면(최소 2는 넘어야 하고) -> 선택한 단어 외에 엉뚱한 철자를 선택한 경우
       else if (stackSize > 1 && stackSize >= currentCharWordLength) {
         //console.log("inCorrect");
         for (let i = 0; i < stackSize; i++) {
@@ -137,9 +141,7 @@ function appStart() {
           word_search_grid_num[row][col] = value;
           columnAnswer.style.backgroundColor = color;
         }
-        rowsStack.clear();
-        colsStack.clear();
-        colorStack.clear();
+        clearStack();
       }
     }
   }
