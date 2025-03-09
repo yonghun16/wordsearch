@@ -1,10 +1,16 @@
 @media (max-width: 768px) {
+  /* header */
   .new-container {
     display: none;
   }
   .header-content, 
   .theme {
     width: 95%;
+  }
+
+  .theme {
+    margin-top: 20px;
+    font-size: 20px;
   }
 
   .logo__word {
@@ -21,8 +27,28 @@
     font-size: 1.1rem;
   }
 
+  /* main */
+  .gird-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
-  .words {
-    display: none;
+  .words-container {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  .words{
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+    flex-wrap: wrap;
+  }
+
+  .words__item {
+    margin-right: 20px;
+    font-size: 16px;
   }
 }

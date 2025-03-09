@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
+
 .theme-container {
   display: flex;
   justify-content: center;
@@ -6,18 +8,20 @@
 .theme {
   margin-top: 40px;
   font-size: 30px;
+  font-weight: bold;
   font-family: 'Noto Sans KR', sans-serif;
   color: #555;
-  width: 830px;
+  width: 815px;
 }
 
 .gird-container {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
   margin-top: 20px;
   margin-bottom: 80px;
 }
+
 .search-grid {
   border: 1px solid #DEDEDD;
 
@@ -36,8 +40,8 @@
 .grid-column {
   background-color: #FEFFFC;
   border: 1px solid #DEDEDD;
-  width: 55px;
-  height: 55px;
+  width: 53px;
+  height: 53px;
   font-size: 25px;
   font-weight: bold;
 }
@@ -45,12 +49,17 @@
 .words{
   display: flex;
   flex-direction: column;
-  align-items: top;
-  width: 100px;
-  height: 600px;
-  padding: 20px;
-  line-height: 1.5em;
+  padding-left: 20px;
+  line-height: 1.8em;
   color: #484844;
   font-size: 18px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Martian Mono", monospace;
+  letter-spacing: 0.05em;
+
+  /*mobile */
+  /*flex-direction: row;*/
+  /*justify-content: flex-start;*/
+  /*width: 95%;*/
+  /*flex-wrap: wrap;*/
 }
+
