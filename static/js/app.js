@@ -36,12 +36,22 @@ let currentColor;          // 현재 클릭한 철자 배경색
 /* --- APP start --- */
 function appStart() {
 
-  // 스택 비우기
+  // 모든 스택 비우기
   function clearStack() {
     rowsStack.clear();
     colsStack.clear();
     colorStack.clear();
     valueStack.clear();
+  }
+
+  // 효과음 재생
+  function audioPlay(audioNum) {
+    const audioList = [blopSound, correctSound, applauseSound];
+    audioList.forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+    audioList[audioNum].play();
   }
 
   // 게임 격자 생성 및 초기화
@@ -61,7 +71,7 @@ function appStart() {
 
   // 단어 클릭
   function handleBlockClick(event) {
-    blopSound.play();
+    audioPlay(0);
     const blockRow = event.target.dataset.indexRow;
     const blockCol = event.target.dataset.indexCol;
 
@@ -112,12 +122,12 @@ function appStart() {
       // 스텍크기가 단어의 철자의 길이와 같다면,(최소 3은 넘어야 하고)
       if (stackSize > 2 && stackSize === currentCharWordLength) {
         //console.log("Correct");
-        correctSound.play();
+        audioPlay(1);
         currentColor += 1;
         clearStack();
         success += 1;
         if (success === words.length) {
-          applauseSound.play();
+          audioPlay(2);
           alert("Success!");
           currentColor = 0;
         }
