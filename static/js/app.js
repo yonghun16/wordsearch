@@ -49,8 +49,10 @@ function appStart() {
   function audioPlay(audioNum) {
     const audioList = [blopSound, correctSound, applauseSound];
     audioList.forEach(audio => {
-      audio.pause();
-      audio.currentTime = 0;
+      if (audio.playing) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
     });
     audioList[audioNum].play();
   }
