@@ -16,6 +16,7 @@
   .grid-column {
     width: 7vw;
     height: 5vh;
+    font-size: 1.3rem;
   }
 
   .theme {
