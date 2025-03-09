@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+  .new-container {
+    display: none;
+  }
+  .header-content {
+    width: 90%;
+  }
+}

@@ -4,6 +4,7 @@
 @import "./reset.css";
 @import "./main.css";
 @import "./footer.css";
+@import "./media_query.css";
 
 body {
   background-color: #FAFFE3;

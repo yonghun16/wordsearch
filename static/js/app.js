@@ -1,7 +1,8 @@
+import { newGame_desktop, newGame_mobile } from "./header-menu.js";
+import "./footer-copyright.js";
 import { createGridLine } from "./modules/gridLine.js";
 import { handleCreateWord } from "./modules/newGame.js";
 import { Stack } from "./modules/stack.js";
-import "./modules/copyright.js";
 import { blopSound, correctSound, applauseSound } from "./modules/sounds.js";
 
 
@@ -29,12 +30,11 @@ const colorArray = [      // 철자 배경색
   "#E6DF94",
   "#C6E1A4"
 ];
-let currentColor;          // 현재 클릭한 철자배경색
+let currentColor;          // 현재 클릭한 철자 배경색
 
 
 /* --- APP start --- */
 function appStart() {
-  const newGame = document.querySelector(".new");
 
   // 스택 비우기
   function clearStack() {
@@ -48,7 +48,6 @@ function appStart() {
   async function createWord() {
     let word_search_grid = await handleCreateWord(rows, cols);
     word_search_grid_num = word_search_grid[1];
-
 
     currentColor = 0;
     prevCharNum = 9999999;
@@ -114,11 +113,6 @@ function appStart() {
       if (stackSize > 2 && stackSize === currentCharWordLength) {
         //console.log("Correct");
         correctSound.play();
-        //for (let i = 0; i < stackSize; i++) {
-        //  const row = rowsStack.pop();
-        //  const col = colsStack.pop();
-        //  word_search_grid_num[row][col] = 0;  // 정답 단어의 grid_num을 0으로 바꾸기
-        //}
         currentColor += 1;
         clearStack();
         success += 1;
@@ -147,12 +141,20 @@ function appStart() {
   }
 
   /* --- event handlers --- */
+
   // 격자 생성
   createGridLine(rows, cols);
   createWord();
 
   // 새로운 게임
-  newGame.addEventListener("click", createWord);
+  const newGameDesktop = newGame_desktop;
+  const newGameMobile = newGame_mobile;
+  newGameDesktop.addEventListener("click", () => {
+    createWord()
+  });
+  newGameMobile.addEventListener("click", () => {
+    createWord()
+  });
 
   // 격자 클릭
   const gridBlocks = document.querySelectorAll('.search-grid');

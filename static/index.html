@@ -12,21 +12,55 @@
 
     <header>
       <div class="header-container">
-        <div class="logo">
-          <div class="logo-container">
-            <div>
-              <span class="logo__word">Word</span>
-              <span class="logo__search">Search</span>
-            </div>
-            <div class="menu-container">
-              <div class="new">
-                <img src="assets/pencil.svg" alt="new">
-                <div class="new__text">New Game</div>
+        <div class="header-content">
+          <div class="sub-container">
+
+            <div class="logo-container">
+              <div>
+                <span class="logo__word">Word</span>
+                <span class="logo__search">Search</span>
+              </div>
+              <div class="btn-menu" type="button">
+                <div class="menu__text">Menu</div>
+              </div>
+              <div class="new-container">
+                <div class="new">
+                  <img src="assets/pencil.svg" alt="new">
+                  <div>New Game</div>
+                </div>
               </div>
             </div>
+
+            <nav class="mobile-submenu-list">
+              <div class="navbar">
+                <div class="container-fluid">
+                  <span class="navbar-brand">Menu</span>
+                  <div class="btn-submenu-close" type="button">
+                    <span class="btn-submenu-close-icon"></span>
+                  </div>
+                </div>
+              </div> 
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="new-sub">
+                    <img src="assets/pencil.svg" alt="new">
+                    <div>New Game</div>
+                  </div>
+                </li>
+                <li class="list-group-item__switch">
+                  <div class="badge bg-dark">
+                    <div class="img-moon hidden"></div>
+                    <div class="img-sun"></div>
+                    <div class ="switch-text">Switch Theme</div>
+                  </div>
+                </li>
+              </ul> 
+            </nav>
+
           </div>
         </div>
       </div>
+
     </header>
 
     <main>
