@@ -5,4 +5,11 @@
   .header-content {
     width: 90%;
   }
+
+  .logo__word {
+    font-size: 30px;
+  }
+  .logo__search {
+    font-size: 40px;
+  }
 }
