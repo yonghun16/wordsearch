@@ -14,16 +14,16 @@
   }
 
   .logo__word {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .logo__search {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .grid-column {
     width: 7.4vw;
-    height: 5vh;
+    height: 4.7vh;
     font-size: 1.1rem;
   }
 
