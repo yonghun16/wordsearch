@@ -7,7 +7,7 @@ export function randomTheme() {
   const newJeans = ["MINJI", "HANNI", "DANIELLE", "HAERIN", "HYEIN"];
   const elements = [ "HYDROGEN", "HELIUM", "LITHIUM", "BERYLLIUM", "BORON", "CARBON", "NITROGEN", "OXYGEN", "FLUORINE" ];
   const avengers = [ "IRONMAN",  "THOR", "BLACKWIDOW", "HAWKEYE", "HULK", "SPIDERMAN", "VISION", "NICKFURY"];
-  const evangelion = [ "SHINJI", "REI", "ASUKA", "MISATO", "GENDO", "KAORU", "TOJI", "KAWORU" ];
+  const evangelion = [ "SHINJI", "REI", "ASUKA", "MISATO", "GENDO", "KAORU", "TOJI", "MURAI" ];
 
   const choiceTheme = themes[Math.floor(Math.random() * 7)];
 
