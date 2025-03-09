@@ -12,4 +12,17 @@
   .logo__search {
     font-size: 40px;
   }
+
+  .grid-column {
+    width: 7vw;
+    height: 5vh;
+  }
+
+  .theme {
+    width: 90%;
+  }
+
+  .words {
+    display: none;
+  }
 }
