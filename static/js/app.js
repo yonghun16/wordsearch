@@ -1,5 +1,6 @@
 import { newGame_desktop, newGame_mobile } from "./header-menu.js";
 import "./footer-copyright.js";
+import "./modules/darkmode.js";
 import { createGridLine } from "./modules/gridLine.js";
 import { handleCreateWord } from "./modules/newGame.js";
 import { Stack } from "./modules/stack.js";

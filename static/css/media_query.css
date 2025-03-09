@@ -1,12 +1,14 @@
 @media (max-width: 768px) {
   /* header */
-  .new-container {
+  .new-container,
+  .header-badge-container {
     display: none;
   }
   .header-content, 
   .theme {
     width: 95%;
   }
+
 
   .theme {
     margin-top: 20px;

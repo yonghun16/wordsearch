@@ -1,3 +1,6 @@
+header {
+  font-family: 'Noto Sans KR', sans-serif;
+}
 .hidden {
   display: none;
 }
@@ -23,13 +26,11 @@
 
 .logo__word {
   font-size: 40px;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .logo__search {
   font-size: 60px;
   font-weight: bold;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .btn-menu {
@@ -42,7 +43,6 @@
   font-size: 18px;
   padding: 0 5px 0 5px;
   margin-right: 10px;
-  font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer;
 }
 
@@ -61,7 +61,6 @@
   font-size: 18px;
   padding-right: 10px;
   padding: 5px;
-  font-family: 'Noto Sans KR', sans-serif;
 
   img {
     display: flex;
@@ -101,7 +100,6 @@
   background-color: #008080;
   color: #F6F6F6;
   padding: 13px 10px;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .container-fluid{
@@ -127,12 +125,11 @@
   margin: 0 5px;
   background-color: #444444;
   color: #F6F6F6;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .list-group-item {
   cursor: pointer;
-  border-bottom: 1px solid #F6F6F6;
+  border-bottom: 1px solid #CCCCCC;
 }
 .list-group-item__switch {
   display: flex;
@@ -144,11 +141,9 @@
 .new-sub {
   display: flex;
   justify-content: left;
-  color: #F6F6F6;
   font-size: 18px;
   padding-right: 10px;
   padding: 12px;
-  font-family: 'Noto Sans KR', sans-serif;
   
 
   img {
@@ -164,16 +159,40 @@
 .badge {
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
   font-size: 11px;
+  font-family: 'Rubik', sans-serif;
+  cursor: pointer;
+
+}
+.header-badge-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-badge--bg {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 1px 3px 1px 1px;;
+  width: 96px;
+  color: #F6F6F6;
+  background-color: #008080;
+}
+.switch-text {
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+  text-align: center;
+  vertical-align: middle;
 }
 
 .img-sun,
-.img-moon {
+.img-moon, 
+.img-moon-light{
   width: 14px;
   height: 14px;
-  margin-right: 5px;
-  color: #F6F6F6;
+  margin-right: 2px;
 }
 .img-sun{
   background-image: url('../assets/sun.svg');
@@ -181,5 +200,9 @@
 }
 .img-moon{
   background-image: url('../assets/moon.svg');
+  background-size: cover;
+}
+.img-moon-light{
+  background-image: url('../assets/moon_light.svg');
   background-size: cover;
 }
