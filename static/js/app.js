@@ -11,6 +11,7 @@ let cols;
 let theme;
 let words = [];
 let word_search_grid_num;
+let word_search_start_point;
 let prevCharNum;
 let success;               // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
 
@@ -39,10 +40,11 @@ function appStart() {
     words = word_search_grid[3];
     rows = word_search_grid[4];
     cols = word_search_grid[5];
+    word_search_start_point = word_search_grid[6];
 
     currentColor = 0;
     prevCharNum = 9999999;
-    success = 0;      // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
+    success = 0;    // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
     stackSize;
     rowsStack = new Stack();
     colsStack = new Stack();
@@ -54,9 +56,11 @@ function appStart() {
 
     const wordsContainer = document.querySelector(".words");
     wordsContainer.innerHTML = ""; // 기존 요소들 제거
+    let i = 0;
     words.forEach(word => {
         const wordItem = document.createElement("div");
         wordItem.classList.add("words__item");
+        wordItem.setAttribute("data-index-wordnum", `${i++}`);
         wordItem.textContent = word;
         wordsContainer.appendChild(wordItem);
     });
@@ -81,6 +85,27 @@ function appStart() {
     });
     audioList[audioNum].play();
   }
+
+
+  // 맞출 단어 클릭
+  function handleWordClick(event) {
+    if (!event.target.dataset.indexWordnum) {
+      return;
+    }
+    const wordIndex = event.target.dataset.indexWordnum;
+    const firstWordX = word_search_start_point[1][wordIndex];
+    const firstWordY = word_search_start_point[2][wordIndex];
+
+    const columnElement = document.querySelector(`[data-index-row="${firstWordY}"][data-index-col="${firstWordX}"]`);
+    columnElement.style.backgroundColor = `#FFCD9B`;
+    columnElement.style.border = `#FF9933 3px solid`;
+
+    setTimeout(function() {
+      columnElement.style.backgroundColor = '#FEFFFC';
+      columnElement.style.border = '#DEDEDD 1px solid';
+    }, 1000);
+  }
+    
 
   // 철자 클릭
   function handleBlockClick(event) {
@@ -135,6 +160,11 @@ function appStart() {
       // 스텍크기가 단어의 철자의 길이와 같다면,(최소 3은 넘어야 하고)
       if (stackSize > 2 && stackSize === currentCharWordLength) {
         //console.log("Correct");
+        const correctElement = document.querySelector(`[data-index-wordnum="${currentCharNum-1}"]`);
+        correctElement.style.color = "#838383";
+        correctElement.style.textDecoration = "line-through";
+        correctElement.style.textDecorationThickness = "3px";
+        correctElement.style.textDecorationColor = `${colorArray[currentColor]}`;
         audioPlay(1);
         currentColor += 1;
         clearStack();
@@ -179,9 +209,13 @@ function appStart() {
     createWord()
   });
 
-  // 격자 클릭
+  // 격자(철자) 클릭
   const gridBlocks = document.querySelectorAll('.search-grid');
   gridBlocks.forEach(block => block.addEventListener('click', handleBlockClick));
+
+  // 단어 클릭
+  const wordBlocks = document.querySelectorAll('.words');
+  wordBlocks.forEach(block => block.addEventListener('click', handleWordClick));
 }
 
 

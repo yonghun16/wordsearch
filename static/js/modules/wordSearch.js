@@ -4,11 +4,13 @@ export function createWordSearchGrid(words, gridSize) {
 
   let wordSearchGrid = [
     Array.from({ length: gridRows }, () => Array(gridCols).fill('_')),
-    Array.from({ length: gridRows }, () => Array(gridCols).fill(0))
+    Array.from({ length: gridRows }, () => Array(gridCols).fill(0)),
+    Array.from({ length: 3 }, () => Array(words.length).fill(0))
   ];
 
   // 단어 배치
   inputWord(wordSearchGrid, gridSize, words);
+
   return wordSearchGrid;
 }
 
@@ -63,6 +65,9 @@ function inputWord(grid, gridSize, words) {
           for (let i = 0; i < word.length; i++) {
             grid[0][startY + i * dc][startX + i * dr] = word[i];
             grid[1][startY + i * dc][startX + i * dr] = count;
+            grid[2][0][count-1] = count;
+            grid[2][1][count-1] = startX;
+            grid[2][2][count-1] = startY;
           }
           count++;
           placed = true;

@@ -42,6 +42,7 @@
   height: 53px;
   font-size: 25px;
   font-weight: bold;
+  box-sizing: border-box;
 }
 
 .words{
