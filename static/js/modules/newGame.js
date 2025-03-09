@@ -1,3 +1,7 @@
+import { randomTheme } from "./randomTheme.js";
+import { createWordSearchGrid } from "./wordSearch.js";
+
+
 /*--- functions ---*/
 // 빈 격자에 랜덤한 알파벳 채우기
 function fillBlinkGridWord(word_search_grid_word, rows, cols) {
@@ -27,12 +31,40 @@ function fillAnswerGridColor(word_search_grid_num, rows, cols) {
   }
 }
 
+
 /*--- handlers ---*/
-// 새로운 게임 생성
-export async function handleCreateWord(rows, cols) {
-  const res = await fetch("/create")
-  const jsonRes = await res.json();
-  const [word_search_grid_word, word_search_grid_num] = jsonRes;
+
+/*
+// Post create 새로운 게임 생성(theme, words, rows, cols)
+export async function handleCreateWord() {
+  const [choiceTheme, words] = randomTheme();
+  const [rows, cols] = [12, 12]
+  const res = await fetch("/create", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id: new Date().getTime(),
+      content: {
+        choiceTheme: choiceTheme,
+        words: words,
+        gridSize: [rows, cols]
+      }
+    }),
+  });
+}
+*/
+
+// 게임 생성
+export async function handleReadWord() {
+
+  //handleCreateWord();
+  const [rows, cols] = [12, 12];
+  const [choiceTheme, words] = randomTheme();
+  const gridSize = [rows, cols];
+
+  const [word_search_grid_word, word_search_grid_num] = createWordSearchGrid(words, gridSize);
 
   fillBlinkGridWord(word_search_grid_word, rows, cols);
   fillAnswerGridColor(word_search_grid_num, rows, cols);
@@ -45,7 +77,15 @@ export async function handleCreateWord(rows, cols) {
       column.innerHTML = word_search_grid_word[i][j];
     }
   }
-  const word_search_grid = [word_search_grid_word, word_search_grid_num];
+  const word_search_grid = [
+    word_search_grid_word,  // 0
+    word_search_grid_num,   // 1
+    choiceTheme,            // 2
+    words,                  // 3
+    rows,                   // 4
+    cols                    // 5
+  ];
   return word_search_grid;
 }
+
 

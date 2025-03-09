@@ -2,40 +2,65 @@ import { newGame_desktop, newGame_mobile } from "./header-menu.js";
 import "./footer-copyright.js";
 import "./modules/darkmode.js";
 import { createGridLine } from "./modules/gridLine.js";
-import { handleCreateWord } from "./modules/newGame.js";
+import { handleReadWord } from "./modules/newGame.js";
 import { Stack } from "./modules/stack.js";
 import { blopSound, correctSound, applauseSound } from "./modules/sounds.js";
 
-
-const [rows, cols] = [12, 12];
-const words = ["BMW", "TESLA", "KIA", "BENZ", "HYUNDAI", "FERRARI"];
-
+let rows;
+let cols;
+let theme;
+let words = [];
 let word_search_grid_num;
 let prevCharNum;
 let success;               // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
-let stackSize;
+
+let stackSize;             // 철자 위치 스택 크기
 let rowsStack;             // 철자 위치 스택row
 let colsStack;             // 철자 위치 스택col
 let colorStack;            // 철자 배경색 스택
 let valueStack;
 
 const colorArray = [      // 철자 배경색
-  "#F9A19A",
-  "#79C5BE",
-  "#B39CDB",
-  "#90CAF9",
-  "#9FA8DA",
-  "#BCAAA3",
-  "#FFCB7F",
-  "#AFBEC5",
-  "#E6DF94",
-  "#C6E1A4"
+  "#F9A19A", "#79C5BE", "#B39CDB", "#90CAF9",
+  "#9FA8DA", "#BCAAA3", "#FFCB7F", "#AFBEC5",
+  "#E6DF94", "#C6E1A4"
 ];
 let currentColor;          // 현재 클릭한 철자 배경색
 
 
 /* --- APP start --- */
 function appStart() {
+
+  // 게임 격자 생성 및 초기화
+  async function createWord() {
+    const word_search_grid = await handleReadWord();
+    word_search_grid_num = word_search_grid[1];
+    theme = word_search_grid[2];
+    words = word_search_grid[3];
+    rows = word_search_grid[4];
+    cols = word_search_grid[5];
+
+    currentColor = 0;
+    prevCharNum = 9999999;
+    success = 0;      // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
+    stackSize;
+    rowsStack = new Stack();
+    colsStack = new Stack();
+    colorStack = new Stack();
+    valueStack = new Stack();
+
+    const themeElement = document.querySelector(".theme");
+    themeElement.innerHTML = theme;
+
+    const wordsContainer = document.querySelector(".words");
+    wordsContainer.innerHTML = ""; // 기존 요소들 제거
+    words.forEach(word => {
+        const wordItem = document.createElement("div");
+        wordItem.classList.add("words__item");
+        wordItem.textContent = word;
+        wordsContainer.appendChild(wordItem);
+    });
+  }
 
   // 모든 스택 비우기
   function clearStack() {
@@ -57,22 +82,7 @@ function appStart() {
     audioList[audioNum].play();
   }
 
-  // 게임 격자 생성 및 초기화
-  async function createWord() {
-    let word_search_grid = await handleCreateWord(rows, cols);
-    word_search_grid_num = word_search_grid[1];
-
-    currentColor = 0;
-    prevCharNum = 9999999;
-    success = 0;      // 정답 제출 차수 (단어 수 만큼 성공하면 게임 클리어)
-    stackSize;
-    rowsStack = new Stack();
-    colsStack = new Stack();
-    colorStack = new Stack();
-    valueStack = new Stack();
-  }
-
-  // 단어 클릭
+  // 철자 클릭
   function handleBlockClick(event) {
     audioPlay(0);
     const blockRow = event.target.dataset.indexRow;
@@ -156,7 +166,7 @@ function appStart() {
   /* --- event handlers --- */
 
   // 격자 생성
-  createGridLine(rows, cols);
+  createGridLine(12, 12);
   createWord();
 
   // 새로운 게임
