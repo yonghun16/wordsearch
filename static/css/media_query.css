@@ -2,26 +2,25 @@
   .new-container {
     display: none;
   }
-  .header-content {
-    width: 90%;
+  .header-content, 
+  .theme {
+    width: 95%;
   }
 
   .logo__word {
     font-size: 30px;
   }
+
   .logo__search {
     font-size: 40px;
   }
 
   .grid-column {
-    width: 7vw;
+    width: 7.2vw;
     height: 5vh;
     font-size: 1.1rem;
   }
 
-  .theme {
-    width: 90%;
-  }
 
   .words {
     display: none;
