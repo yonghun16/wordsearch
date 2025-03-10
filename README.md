@@ -2,7 +2,7 @@
 
   ![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=Word%20Search%20-%20Clone&fontSize=45&animation=fadeIn&fontAlignY=38&desc=yonghun16&descAlignY=55&descAlign=85)
 
-  <img src="https://raw.githubusercontent.com/yonghun16/wordle/refs/heads/main/wordle.jpg" width=800px />
+  <img src="https://raw.githubusercontent.com/yonghun16/wordsearch/refs/heads/main/app.png" width=800px />
 	
 </div>
 
@@ -19,7 +19,7 @@
 		<a href="http://140.238.9.24:8001/">Clone 보러가기</a>
 	</li>
 	<li>
-		Single-page
+		Single-page, 반응형
 	</li>
 </ul>
 
