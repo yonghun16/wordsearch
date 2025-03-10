@@ -16,18 +16,18 @@ function fillBlinkGridWord(word_search_grid_word, rows, cols) {
 }
 
 // 정답 격자에 배경색 채우기
-//function fillAnswerGridColor(word_search_grid_num, rows, cols) {
-//  const colorArray = ["#fff5f4", "#d3fffa", "#ede0ff", "#d3eeff", "#e0e6ff", "#f4e4e1", "#fff0db", "#e5f8ff", "#fffce5", "#f0ffe2"];
-//  for (let i = 0; i < rows; i++) {
-//    const rowAnswer = document.querySelector(`.row-${i}`);
-//    for (let j = 0; j < cols; j++) {
-//      const columnAnswer = rowAnswer.querySelector(`[data-index-row="${i}"][data-index-col="${j}"]`);
-//      if (word_search_grid_num[i][j] !== 0) {
-//        columnAnswer.style.backgroundColor = `${colorArray[word_search_grid_num[i][j] - 1]}`;
-//      }
-//    }
-//  }
-//}
+function fillAnswerGridColor(word_search_grid_num, rows, cols) {
+  const colorArray = ["#fff5f4", "#d3fffa", "#ede0ff", "#d3eeff", "#e0e6ff", "#f4e4e1", "#fff0db", "#e5f8ff", "#fffce5", "#f0ffe2"];
+  for (let i = 0; i < rows; i++) {
+    const rowAnswer = document.querySelector(`.row-${i}`);
+    for (let j = 0; j < cols; j++) {
+      const columnAnswer = rowAnswer.querySelector(`[data-index-row="${i}"][data-index-col="${j}"]`);
+      if (word_search_grid_num[i][j] !== 0) {
+        columnAnswer.style.backgroundColor = `${colorArray[word_search_grid_num[i][j] - 1]}`;
+      }
+    }
+  }
+}
 
 // 배경색 채우기
 function fillGridColor(word_search_grid_num, rows, cols) {
@@ -52,6 +52,7 @@ export async function handleReadWord() {
 
   fillBlinkGridWord(word_search_grid_word, rows, cols);
   fillGridColor(word_search_grid_num, rows, cols);
+  fillAnswerGridColor(word_search_grid_num, rows, cols);
 
   // 완성된 격자 HTML에 채우기
   for (let i = 0; i < rows; i++) {

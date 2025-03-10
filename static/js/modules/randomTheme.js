@@ -3,7 +3,7 @@ export function randomTheme() {
   const themes = ['Car Brands', 'Animals', 'Fruits', 'New Jeans', 'Elements', 'Avengers', 'Evangelion']
   const carBrands = ["BMW", "TESLA", "KIA", "BENZ", "HYUNDAI", "FERRARI", "AUDI", "TOYOTA", "NISSAN"];
   const animals = ["CAT", "DOG", "BIRD", "HORSE", "ELEPHANT", "RABBIT", "LION", "TIGER", "ZEBRA"];
-  const fruits = ["APPLE", "BANANA", "CHERRY", "GRAPE", "KIWI", "MELON", "ORANGE", "MANGO", "KIWI"];
+  const fruits = ["APPLE", "BANANA", "CHERRY", "GRAPE", "KIWI", "MELON", "ORANGE", "MANGO", "PEACH"];
   const newJeans = ["MINJI", "HANNI", "DANIELLE", "HAERIN", "HYEIN"];
   const elements = [ "HYDROGEN", "HELIUM", "LITHIUM", "BERYLLIUM", "BORON", "CARBON", "NITROGEN", "OXYGEN", "FLUORINE" ];
   const avengers = [ "IRONMAN",  "THOR", "BLACKWIDOW", "HAWKEYE", "HULK", "SPIDERMAN", "VISION", "NICKFURY"];

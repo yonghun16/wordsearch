@@ -53,9 +53,10 @@ function inputWord(grid, gridSize, words) {
           const newX = startX + i * dr;
 
           // 해당 위치가 비어있는지 확인
-          const isOccupied = grid[0][newY]?.[newX] !== '_';
+          //const isBlanked = grid[0][newY]?.[newX] === '_' || grid[0][newY]?.[newX] === word[i];
+          const isBlanked = grid[0][newY]?.[newX] === '_';
 
-          if (isOccupied) {
+          if (!isBlanked) {
             check = false;
             break;
           }
