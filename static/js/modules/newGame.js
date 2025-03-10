@@ -52,7 +52,7 @@ export async function handleReadWord() {
 
   fillBlinkGridWord(word_search_grid_word, rows, cols);
   fillGridColor(word_search_grid_num, rows, cols);
-  fillAnswerGridColor(word_search_grid_num, rows, cols);
+  //fillAnswerGridColor(word_search_grid_num, rows, cols);
 
   // 완성된 격자 HTML에 채우기
   for (let i = 0; i < rows; i++) {
