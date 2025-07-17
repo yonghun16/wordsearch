@@ -6,6 +6,8 @@ import { handleReadWord } from "./modules/newGame.js";
 import { Stack } from "./modules/stack.js";
 import { blopSound, correctSound, applauseSound } from "./modules/sounds.js";
 
+let rows;
+let cols;
 let theme;
 let words = [];
 let word_search_grid_num;
