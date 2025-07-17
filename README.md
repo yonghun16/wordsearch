@@ -1,39 +1,49 @@
+# 🧩 Word Search game
 <div align="center">
-
-  ![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=Word%20Search%20-%20Clone&fontSize=45&animation=fadeIn&fontAlignY=38&desc=yonghun16&descAlignY=55&descAlign=85)
-
-  <a href="https://yonghun16.duckdns.org/wordsearch/"><img src="https://raw.githubusercontent.com/yonghun16/wordsearch/refs/heads/main/app.png" width=800px /></a>
-	
+  <a href="https://yonghun16.duckdns.org/wordsearch/"><img src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview.gif" width=600px /></a>
 </div>
 
-</br>
+## 🧙 프로젝트 개요
+![project_period](https://img.shields.io/badge/Project%20Period-2025--04--02%20~%202025--04--9-01807E)<br>
 
-<ul>
-  <li>
-      격자판(grid) 속에 숨겨진 단어들을 찾아내는 퍼즐 게임
-  </li>
-	<li>
-		<a href="https://thewordsearch.com/">원본 보러가기</a> (thewordsearch.com)
-	</li>
-	<li>
-		<a href="http://140.238.9.24:8001/">Clone 보러가기</a>
-	</li>
-	<li>
-		Single-page, 반응형
-	</li>
-</ul>
+워드 서치 게임(Word Search Game)은 단어 찾기 퍼즐로, 정해진 글자판(Grid) 안에서 주어진 단어 목록에 있는 단어들을 가로, 세로, 대각선 방향으로 찾아내는 게임입니다. 
 
-</br>
+퍼즐을 푸는 사람은 글자판 속에 숨어 있는 단어들을 눈으로 찾아 표시해야 합니다.
 
-<h4>Powerd by</h4>
-<div>
-	<!-- HTML --><a href="https://html.spec.whatwg.org/"><img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" /></a>
-	<!-- CSS --><a href="https://www.w3.org/Style/CSS/"><img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" /></a>
-	<!-- JavaScript --><a href="https://www.ecma-international.org/"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /></a>
-  <br>
-	<!-- Python --><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white" /></a>
-	<!-- FastAPI --><a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white" /></a>
- 	<br>
-	<!-- Vim --><a href="https://www.vim.org"><img src="https://img.shields.io/badge/Vim-019733?style=flat&logo=vim&logoColor=white" /></a>
-	<!-- OCI --><a href="https://www.oracle.com/cloud/"><img src="https://img.shields.io/badge/OCI-F80000?style=flat&logo=Oracle&logoColor=white" /></a>
+
+## 📦 배포
+
+> [yonghun16.duckdns.org/wordsearch](https://yonghun16.duckdns.org/wordsearch)
+
+
+## ⚙️ 기술 스택
+### 🎨 Frontend
+- **언어** : <!-- JavaScript --><a href="https://www.ecma-international.org/"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /></a>
+
+### 🔐 Backend
+- **언어** : <!-- Python --><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white" /></a>
+- **프레임워크** : <!-- FastAPI --><a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white" /></a>
+- **배포** : <!-- NGINX --><a href="https://www.nginx.com/"><img src="https://img.shields.io/badge/NGINX-009639?style=flat&logo=NGINX&logoColor=white" /></a> <!-- OCI --><a href="https://www.oracle.com/cloud/"><img src="https://img.shields.io/badge/OCI-F80000?style=flat&logo=Oracle&logoColor=white" /></a> 
+
+
+## ⚙️ 기능 소개
+
+### 🔀 랜덤 단어 배치
+<div align="center">
+  <img width=500 src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview1.gif?raw=true" />
+</div>
+
+### ✔️ 단어 맞추기 & 힌트 단어 체크
+<div align="center">
+  <img width=500 src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview.gif?raw=true" />
+</div>
+
+### 🎨 테마 변경
+<div align="center">
+  <img width=500 src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview2.gif?raw=true" />
+</div>
+
+### 📱 반응형
+<div align="center">
+  <img width=500 src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview3.gif?raw=true" />
 </div>
