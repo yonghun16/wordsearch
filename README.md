@@ -1,6 +1,6 @@
 # 🧩 Word Search game
 <div align="center">
-  <a href="https://yonghun16.duckdns.org/wordsearch/"><img src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview.gif" width=600px /></a>
+  <a href="https://elaborate-frangipane-337dd8.netlify.app/"><img src="https://github.com/yonghun16/wordsearch/blob/main/previews/preview.gif" width=600px /></a>
 </div>
 
 ## 🧙 프로젝트 개요
@@ -13,17 +13,12 @@
 
 ## 📦 배포
 
-> [yonghun16.duckdns.org/wordsearch](https://yonghun16.duckdns.org/wordsearch)
+> [yonghun16.duckdns.org/wordsearch](https://elaborate-frangipane-337dd8.netlify.app/)
 
 
 ## ⚙️ 기술 스택
-### 🎨 Frontend
 - **언어** : <!-- JavaScript --><a href="https://www.ecma-international.org/"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /></a>
-
-### 🔐 Backend
-- **언어** : <!-- Python --><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white" /></a>
-- **프레임워크** : <!-- FastAPI --><a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white" /></a>
-- **배포** : <!-- NGINX --><a href="https://www.nginx.com/"><img src="https://img.shields.io/badge/NGINX-009639?style=flat&logo=NGINX&logoColor=white" /></a> <!-- OCI --><a href="https://www.oracle.com/cloud/"><img src="https://img.shields.io/badge/OCI-F80000?style=flat&logo=Oracle&logoColor=white" /></a> 
+- **배포** : <!-- Netlify --><a href="https://www.netlify.com/"><img src="https://img.shields.io/badge/netlify-1EC0B1?style=flat&logo=Netlify&logoColor=white" /></a>
 
 
 ## ⚙️ 기능 소개
